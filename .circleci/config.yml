@@ -1,0 +1,25 @@
+version: 2
+general:
+  branches:
+    only:
+      - master
+jobs:
+  build:
+    docker:
+      - image: circleci/node:chakracore-8.11.1
+    steps:
+      - checkout
+      - run:
+          name: Deploy
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@3.94.205.30 \
+            "echo Start deploy && \
+            cd ~/react-ci-cd && \
+            git pull origin master && \
+            sudo docker compose up --build -d && \
+            echo Deploy end"
+workflows:
+  version: 2
+  deploy_ec2:
+    jobs:
+      - build
