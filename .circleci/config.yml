@@ -6,7 +6,7 @@ general:
 jobs:
   build:
     docker:
-      - image: circleci/node:chakracore-8.11.1
+      - image: circleci/openjdk:8-jdk
     steps:
       - checkout
       - run:
