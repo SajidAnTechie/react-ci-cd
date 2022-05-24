@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@3.94.205.30 \
+            ssh -i StrictHostKeyChecking=no ubuntu@3.94.205.30 \
             "echo Start deploy && \
             cd ~/react-ci-cd && \
             git pull origin master && \
