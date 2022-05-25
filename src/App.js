@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        CI/CD demo
+        CI/CD DevOps 2022
       </header>
     </div>
   );
